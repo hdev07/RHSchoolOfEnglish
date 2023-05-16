@@ -1,15 +1,33 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="flex m-5 p-4">
+    <div class="w-1/3">
+      <div v-for="(card, i) in Data" :data="card" :key="i">
+        <ChatCard :title="card[i].title" :desc="card[i].description" />
+      </div>
+    </div>
+    <div class="w-2/3">
+      <ChatDescription class="fixed" />
+    </div>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+<script>
+import ChatCard from '../components/common/chatCard.vue'
+import ChatDescription from '../components/common/chatDescription.vue'
+export default {
+  components: { ChatCard, ChatDescription },
+  data() {
+    return {
+      Data: [
+        { title: 'qwertyu 1', description: 'wertyuiopkajslkw' },
+        { title: 'qwertyu 2', description: 'qweqwdsdfasfgsd' },
+        { title: 'qwertyu 3', description: 'gfkfgjkgh' },
+        { title: 'qwertyu 4', description: 'fjkghkuyikuikuikyu' },
+        { title: 'qwertyu 4', description: 'uyikyuikyuikyiukt' }
+      ]
+    }
   }
 }
-</style>
+</script>
+
+<style></style>
