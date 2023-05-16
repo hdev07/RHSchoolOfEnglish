@@ -17,7 +17,7 @@ export default {
   props: {
     img: { type: String, default: 'https://picsum.photos/200/300' },
     title: { type: String, default: 'Title of contact' },
-    des: { type: String, default: 'Desc of message' }
+    desc: { type: String, default: 'Desc of message' }
   }
 }
 </script>
